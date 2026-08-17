@@ -701,4 +701,99 @@
   .menu-overlay {
     background: rgba(0, 0, 0, 0.55);
   }
+  /* =====================================================
+   MOBILE HEADER FIX
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Keep the header above the overlay/menu */
+  header {
+    position: relative;
+    z-index: 50;
+  }
+
+  /* Keep logo visible and prevent it from being covered */
+  .logo {
+    position: relative;
+    z-index: 51;
+    max-width: 190px;
+  }
+
+  .logo img {
+    max-width: 190px;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Keep hamburger above the menu */
+  .hamburger {
+    position: relative;
+    z-index: 60;
+  }
+}
+
+
+/* =====================================================
+   SMALL PHONE HEADER
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .logo {
+    max-width: 175px;
+  }
+
+  .logo img {
+    max-width: 175px;
+  }
+
+  .hamburger {
+    z-index: 60;
+  }
+}
+}
+@media (max-width: 480px) {
+
+  .logo {
+    max-width: 140px;
+    height: 50px;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo h1 {
+    font-size: 15px;
+  }
+
+  .logo h1 span {
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+}
+@media (max-width: 768px) {
+
+  .logo {
+    width: auto;
+    max-width: 150px;
+    height: 55px;
+  }
+
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo h1 {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .logo h1 span {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
 }
