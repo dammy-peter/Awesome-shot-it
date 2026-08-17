@@ -37,6 +37,10 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
+/* =========================
+   AUTO SLIDE
+========================= */
+
 function startAutoSlide() {
   clearInterval(autoSlide);
 
@@ -49,6 +53,10 @@ function resetAutoSlide() {
   startAutoSlide();
 }
 
+/* =========================
+   ARROW CONTROLS
+========================= */
+
 nextBtn.addEventListener("click", () => {
   nextSlide();
   resetAutoSlide();
@@ -59,9 +67,51 @@ prevBtn.addEventListener("click", () => {
   resetAutoSlide();
 });
 
+/* =========================
+   DOT CONTROLS
+========================= */
+
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     showSlide(index);
     resetAutoSlide();
   });
 });
+
+/* =========================
+   TOUCH / SWIPE CONTROL
+========================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+slider.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+
+  // Stop automatic movement while touching
+  clearInterval(autoSlide);
+});
+
+slider.addEventListener("touchmove", (e) => {
+  touchEndX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", () => {
+  const swipeDistance = touchStartX - touchEndX;
+
+  // Swipe left → next slide
+  if (swipeDistance > 50) {
+    nextSlide();
+  }
+
+  // Swipe right → previous slide
+  if (swipeDistance < -50) {
+    prevSlide();
+  }
+
+  // Start automatic movement again
+  resetAutoSlide();
+});
+
+/* Start automatic slider */
+startAutoSlide();

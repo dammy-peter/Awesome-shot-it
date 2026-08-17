@@ -197,7 +197,7 @@
 
   /* Previous / Next buttons */
   .slider-btn {
-    display: flex;
+    display: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -323,4 +323,14 @@
     margin-top: 30px;
     border-right: none;
   }
+  @media (max-width: 600px) {
+    .sect-4.button {
+      display: inline-flex;
+      width: fit-content;
+      max-width: 100%;
+      box-sizing: border-box;
+      white-space: nowrap;
+    }
+  }
+  
 }
