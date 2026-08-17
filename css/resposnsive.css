@@ -332,5 +332,60 @@
       white-space: nowrap;
     }
   }
-  
+  @media (max-width: 600px) {
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      width: 50%;
+      max-width: 280px;
+      height: 100vh;
+
+      padding: 90px 20px 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      box-sizing: border-box;
+      overflow: hidden;
+
+      background-color: #211a17;
+      z-index: 10;
+    }
+
+    .mobile-menu nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .mobile-menu nav a {
+      display: block;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .mobile-menu .cta {
+      margin: 35px 0 0;
+      width: auto;
+    }
+
+    .mobile-menu .cta button {
+      width: auto;
+      max-width: 100%;
+      padding: 10px 12px;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .hamburger {
+      position: relative;
+      z-index: 20;
+    }
+    
+  }
 }
