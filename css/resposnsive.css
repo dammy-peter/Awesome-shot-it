@@ -3,389 +3,702 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 :root {
   --primary-color: white;
   --secondary-color: black;
   --accent-color: #f5945c;
   --background: rgba(163, 156, 156, 0.432);
 }
+
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
 @media (max-width: 768px) {
+
+
+  /* =====================================================
+     MOBILE MENU
+  ===================================================== */
+
   .mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    justify-content: flex-start;
+    position: fixed;
+
     top: 0;
-    padding: 70px 20px 10px 20px;
-    right: 1px;
+    right: 0;
+
+    width: 50%;
+    max-width: 280px;
+    height: 100vh;
+
+    padding: 100px 20px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
     background-color: #241c18;
 
-    height: 80vh;
-    width: 40%;
-  }
-  .mobile-menu nav {
-    flex-direction: column;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Start outside screen */
+    transform: translateX(100%);
+
+    /* Smooth opening */
+    transition: transform 0.3s ease;
+
+    z-index: 30;
   }
 
-  .cta {
-    margin-top: 30px;
-  }
-  .mobile-menu .cta button {
-    width: 125px;
-    padding: 8px 10px;
-    font-size: 12px;
-    white-space: nowrap;
-  }
-  .hamburger {
-    display: flex;
-    z-index: 33;
-  }
+
+  /* =====================================================
+     OPEN MOBILE MENU
+  ===================================================== */
 
   #menu-toggle:checked ~ .mobile-menu {
-    display: flex;
+    transform: translateX(0);
   }
+
+
+  /* =====================================================
+     MOBILE MENU NAVIGATION
+  ===================================================== */
+
+  .mobile-menu nav {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+  }
+
+  .mobile-menu nav a {
+    display: block;
+
+    width: 100%;
+
+    color: white;
+
+    font-size: 18px;
+
+    text-decoration: none;
+  }
+
+
+  /* =====================================================
+     MOBILE BOOK BUTTON
+  ===================================================== */
+
+  .mobile-menu .cta {
+    margin-top: 35px;
+
+    width: auto;
+  }
+
+  .mobile-menu .cta button {
+    width: auto;
+
+    max-width: 100%;
+
+    padding: 10px 12px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =====================================================
+     HAMBURGER
+  ===================================================== */
+
+  .hamburger {
+    display: flex;
+
+    position: relative;
+
+    z-index: 40;
+  }
+
+
+  /* =====================================================
+     DARK OVERLAY
+  ===================================================== */
+
+  .menu-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 20;
+
+    cursor: pointer;
+  }
+
+
+  /* Show overlay immediately when menu opens */
+
+  #menu-toggle:checked ~ .menu-overlay {
+    display: block;
+  }
+
+
+  /* =====================================================
+     PREVENT BACKGROUND SCROLL
+  ===================================================== */
+
+  body:has(#menu-toggle:checked) {
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     HERO
+  ===================================================== */
 
   .hero-content {
     margin: 0 20px;
+
     width: 65%;
   }
+
   .hero-cont p {
     font-size: 12px;
+
     width: 60%;
   }
+
   .hero-cont2 p {
     font-size: 35px;
+
     width: 75%;
   }
+
   .hero-cont3 p {
     width: 60%;
+
     margin-top: 10px;
+
     line-height: 1.3;
   }
 
+
   .hero-content-2 {
     display: flex;
+
     flex-direction: column;
+
     height: 70vh;
-    /* gap: 10px; */
-    /* justify-content: center; */
+
     align-items: center;
+
     padding: 20px;
   }
+
+
   .book-btn {
     display: none;
+
     align-items: center;
+
     gap: 10px;
+
     padding: 14px 18px;
+
     text-decoration: none;
+
     font-size: 15px;
   }
 
+
   .book-btn {
     background: #f59a63;
+
     color: white;
   }
 
+
   .portfolio-btn {
     background: transparent;
+
     border: 1px solid var(--accent-color);
+
     color: var(--accent-color);
   }
+
+
   .hero-cont-1,
   .hero-cont-2,
   .hero-cont-3,
   .hero-cont-4 {
     width: 80%;
+
     border: none;
   }
+
+
   .hero-sect02-btn {
     flex-direction: column;
+
     width: 100%;
+
     align-items: center;
+
     text-align: center;
+
     gap: 20px;
   }
+
+
   .hero-section-02 {
     padding: 0 20px;
+
     width: 100%;
   }
+
+
   .hero-sect2-btn {
     width: 80%;
   }
+
+
   .hero-sect2-btn2 {
     width: 55%;
   }
+
+
   .hero-sect2-btn2 a {
     width: 175px;
+
     padding: 8px 10px;
+
     font-size: 12px;
+
     white-space: nowrap;
+
     margin: 20px auto;
   }
+
+
+  /* =====================================================
+     ABOUT
+  ===================================================== */
+
   .about-container {
     flex-direction: column;
+
     height: auto;
+
     width: 100%;
+
     padding: 10px 20px;
+
     border: 1px solid gray;
+
     overflow: hidden;
-    /* box-sizing: border-box; */
   }
+
 
   .about-btn {
     width: 100%;
+
     justify-content: space-between;
+
     border-right: none;
+
     border-bottom: 1px solid gray;
   }
+
+
   .about-btn2 {
     width: 100%;
+
     padding: 0 20px;
   }
+
+
   .testimonial {
     width: 50%;
   }
+
+
   .client-test {
     font-size: 15px;
   }
+
+
   .client-name h3 {
     font-size: 12px;
   }
+
+
   .client-name p {
     font-size: 10px;
   }
+
+
   .img-about {
     width: 50%;
+
     height: auto;
   }
+
+
+  /* =====================================================
+     SECTION 4
+  ===================================================== */
+
   .section-4 {
     width: 100%;
   }
 
-  .sect-4-btn {
-    height: auto;
-    padding: 20px;
-    gap: 20px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .home-footer {
-    /* flex-direction: column; */
-  }
-  .img-slider {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .img-container {
-    width: 100%;
-    display: flex;
-    gap: 0;
-    padding: 0;
-    margin-top: 20px;
-    overflow: visible;
-    transition: transform 0.6s ease;
-  }
-
-  .img-sect01 {
-    width: 100%;
-    height: 300px;
-    flex: 0 0 100%;
-    flex-shrink: 0;
-  }
-
-  /* Previous / Next buttons */
-  .slider-btn {
-    display: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 5;
-  }
-
-  .slider-btn.prev {
-    left: 10px;
-  }
-
-  .slider-btn.next {
-    right: 10px;
-  }
-
-  /* Dots */
-  .slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    margin-top: 12px;
-  }
-
-  .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: gray;
-    cursor: pointer;
-  }
-
-  .dot.active {
-    background: var(--accent-color);
-  }
-
-  /* SECTION 4 */
-  .section-4 {
-    width: 100%;
-  }
 
   .sect-4-btn {
     width: 100%;
+
     height: auto;
+
     padding: 30px 20px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 25px;
   }
 
+
   .sect-1-btn {
     width: 100%;
+
     height: auto;
+
     border-right: none;
+
     gap: 20px;
   }
 
+
   .img-sect-4 {
     width: 60px;
+
     height: 60px;
+
     flex-shrink: 0;
   }
 
+
   .sect-1-btn p {
     font-size: 25px;
+
     width: 70%;
   }
 
+
   .sect-2-btn {
     width: 100%;
+
     font-size: 15px;
   }
+
 
   .sect-3-btn {
     width: 100%;
   }
 
+
   .sect-3-btn a {
     font-size: 12px;
   }
 
-  /* FOOTER */
+
+  /* =====================================================
+     IMAGE SLIDER
+  ===================================================== */
+
+  .img-slider {
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+  }
+
+
+  .img-container {
+    width: 100%;
+
+    display: flex;
+
+    gap: 0;
+
+    padding: 0;
+
+    margin-top: 20px;
+
+    overflow: visible;
+
+    transition: transform 0.6s ease;
+
+    touch-action: pan-y;
+
+    user-select: none;
+  }
+
+
+  .img-sect01 {
+    width: 100%;
+
+    height: 300px;
+
+    flex: 0 0 100%;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =====================================================
+     SLIDER ARROWS
+  ===================================================== */
+
+  .slider-btn {
+    display: none;
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    color: white;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+  }
+
+
+  .slider-btn.prev {
+    left: 10px;
+  }
+
+
+  .slider-btn.next {
+    right: 10px;
+  }
+
+
+  /* =====================================================
+     SLIDER DOTS
+  ===================================================== */
+
+  .slider-dots {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 12px;
+  }
+
+
+  .dot {
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: gray;
+
+    cursor: pointer;
+  }
+
+
+  .dot.active {
+    background: var(--accent-color);
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ===================================================== */
+
   .home-footer {
     width: 100%;
+
     height: auto;
+
     padding: 25px 20px;
+
     display: block;
   }
 
+
   .foot-btn {
     width: 100%;
+
     display: flex;
-    flex-wrap: wrap; /* THIS IS THE IMPORTANT PART */
+
+    flex-wrap: wrap;
+
     align-items: flex-start;
   }
 
+
   .foot-btn01 {
     width: 55%;
+
     height: auto;
+
     border-right: 1px solid rgba(128, 128, 128, 0.288);
   }
 
+
   .foot-btn02 {
     width: 45%;
+
     height: auto;
+
     padding: 0 15px;
+
     border-right: none;
   }
+
 
   .foot-btn03,
   .foot-btn04,
   .foot-btn05 {
     width: 50%;
+
     height: auto;
+
     margin-top: 30px;
+
     border-right: none;
   }
-  @media (max-width: 600px) {
-    .sect-4.button {
-      display: inline-flex;
-      width: fit-content;
-      max-width: 100%;
-      box-sizing: border-box;
-      white-space: nowrap;
-    }
+
+
+  /* =====================================================
+     SECTION 4 BUTTON
+  ===================================================== */
+
+  .sect-4.button {
+    display: inline-flex;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    white-space: nowrap;
   }
-  @media (max-width: 600px) {
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: 0;
+}
 
-      width: 50%;
-      max-width: 280px;
-      height: 100vh;
 
-      padding: 90px 20px 30px;
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
+@media (max-width: 600px) {
 
-      box-sizing: border-box;
-      overflow: hidden;
 
-      background-color: #211a17;
-      z-index: 10;
-    }
+  /* =====================================================
+     MOBILE MENU
+  ===================================================== */
 
-    .mobile-menu nav {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+  .mobile-menu {
+    width: 55%;
 
-    .mobile-menu nav a {
-      display: block;
-      width: 100%;
-      font-size: 18px;
-    }
+    max-width: 280px;
 
-    .mobile-menu .cta {
-      margin: 35px 0 0;
-      width: auto;
-    }
+    min-width: 210px;
 
-    .mobile-menu .cta button {
-      width: auto;
-      max-width: 100%;
-      padding: 10px 12px;
-      white-space: nowrap;
-      box-sizing: border-box;
-    }
+    padding: 100px 20px 30px;
+  }
 
-    .hamburger {
-      position: relative;
-      z-index: 20;
-    }
-    
+
+  /* =====================================================
+     MENU LINKS
+  ===================================================== */
+
+  .mobile-menu nav {
+    gap: 32px;
+  }
+
+
+  .mobile-menu nav a {
+    font-size: 18px;
+  }
+
+
+  /* =====================================================
+     BOOK BUTTON
+  ===================================================== */
+
+  .mobile-menu .cta {
+    margin-top: 35px;
+  }
+
+
+  .mobile-menu .cta button {
+    width: auto;
+
+    max-width: 100%;
+
+    padding: 10px 12px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+  }
+
+
+  /* =====================================================
+     HAMBURGER
+  ===================================================== */
+
+  .hamburger {
+    z-index: 40;
+  }
+
+
+  /* =====================================================
+     OVERLAY
+  ===================================================== */
+
+  .menu-overlay {
+    background: rgba(0, 0, 0, 0.55);
   }
 }

@@ -11,70 +11,192 @@
   --background: rgba(163, 156, 156, 0.432);
 }
 
-header {
-  display: flex;
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
   position: absolute;
-  height: 90px;
+  top: 0;
+  left: 0;
+
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 5;
+  height: 90px;
+
   padding: 0 30px;
-}
-nav {
-  display: flex;
-  gap: 30px;
-}
-nav a {
-  color: var(--primary-color);
-  font-size: 18px;
-  text-decoration: none;
-}
-.mobile-menu {
-  display: flex;
-  width: 60%;
-  justify-content: space-between;
-}
-#menu-toggle {
-  display: none;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-}
-.hamburger span {
-  width: 20px;
-  height: 3px;
-  border-radius: 3px;
-  background-color: var(--primary-color);
-}
-.logo {
-  /* margin-left: 30px; */
-  color: var(--primary-color);
+
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  z-index: 100;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+
   height: 70px;
+
+  color: var(--primary-color);
+
+  text-decoration: none;
+
+  z-index: 110;
 }
+
+.logo img {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+}
+
 .logo h1 {
+  margin: 0;
+
   font-size: 20px;
+  line-height: 1.05;
 }
+
 .logo h1 span {
   font-size: 20px;
   letter-spacing: 3px;
 }
-.icon img {
-  width: 60px;
-  height: 60px;
+
+
+/* ========================================
+   HIDE CHECKBOX
+======================================== */
+
+#menu-toggle {
+  display: none;
 }
-.cta {
-  margin-right: 30px;
+
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.mobile-menu {
+  width: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.cta button {
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.3);
+
+.mobile-menu nav {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.mobile-menu nav a {
   color: var(--primary-color);
+
+  font-size: 18px;
+
+  text-decoration: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu nav a:hover {
+  opacity: 0.65;
+}
+
+
+/* ========================================
+   DESKTOP CTA
+======================================== */
+
+.menu-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+
+  color: var(--primary-color);
+
+  background: rgba(0, 0, 0, 0.3);
+
   border: 1px solid var(--primary-color);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+
+  transition: background 0.3s ease;
+}
+
+.menu-cta:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+
+/* ========================================
+   HAMBURGER
+======================================== */
+
+.hamburger {
+  display: none;
+
+  width: 35px;
+  height: 35px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  z-index: 120;
+}
+
+.hamburger span {
+  display: block;
+
+  width: 24px;
+  height: 3px;
+
+  border-radius: 3px;
+
+  background-color: var(--primary-color);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.menu-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  z-index: 90;
+
+  cursor: pointer;
 }
 
 .section-1 {
