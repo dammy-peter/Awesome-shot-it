@@ -3,22 +3,385 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio | Awesome Shot It</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/resposnsive.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/portfolio.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <header class="site-header">
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        <img
+          src="https://api.iconify.design/lucide:camera.svg?color=%23ffffff"
+          alt="Awesome Shot It logo"
+        />
+        <h1>
+          Awesome <br />
+          <span>Shot it</span>
+        </h1>
+      </a>
+
+      <!-- MENU CHECKBOX -->
+      <input type="checkbox" id="menu-toggle" />
+
+      <!-- HAMBURGER -->
+      <label class="hamburger" for="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- NAVIGATION MENU -->
+      <div class="mobile-menu">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html" class="active">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="https://wa.me/7056343057" class="menu-cta"> BOOK A SESSION </a>
+      </div>
+
+      <!-- DARK OVERLAY -->
+      <label
+        class="menu-overlay"
+        for="menu-toggle"
+        aria-label="Close menu"
+      ></label>
     </header>
 
-    <script src="/js/main.js"></script>
+    <main>
+      <!-- ============ PAGE BANNER ============ -->
+      <section class="page-banner">
+        <div class="page-banner-content">
+          <h1>Portfolio</h1>
+          <p class="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> Portfolio
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ WEDDINGS ============ -->
+      <section class="portfolio-block">
+        <div class="portfolio-block-image">
+          <img src="/asset/images/wedding hero.jpg" alt="Wedding photography" />
+        </div>
+        <div class="portfolio-block-text">
+          <p class="eyebrow">Weddings</p>
+          <h2>Love Stories, <span>Beautifully Told</span></h2>
+          <p class="block-desc">
+            From the quiet moments before the vows to the last dance of the
+            night, I capture every emotion of your wedding day exactly as it
+            happens — genuine, unposed, and full of feeling. Every gallery tells
+            the complete story of the day you'll want to relive again and again.
+          </p>
+        </div>
+      </section>
+
+      <div class="portfolio-gallery">
+        <div class="gallery-item">
+          <img src="/asset/images/wedding-1 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/wedding-2 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/wedding-3 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/wedding-5 (1).jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ============ PORTRAITS ============ -->
+      <section class="portfolio-block portfolio-block-reverse">
+        <div class="portfolio-block-image">
+          <img
+            src="/asset/images/portrait hero.jpg"
+            alt="Portrait photography"
+          />
+        </div>
+        <div class="portfolio-block-text">
+          <p class="eyebrow">Portraits</p>
+          <h2>Personality, <span>Captured Naturally</span></h2>
+          <p class="block-desc">
+            Whether it's a solo portrait, a couple, or a family session, I focus
+            on bringing out the real you in front of the camera. Relaxed
+            direction and natural light come together to create portraits that
+            actually look like you, not a stiff studio pose.
+          </p>
+        </div>
+      </section>
+
+      <div class="portfolio-gallery">
+        <div class="gallery-item">
+          <img src="/asset/images/portrait-1 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/portrait-2 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/portrait-3 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/portrait-4 (1).jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ============ EVENTS ============ -->
+      <section class="portfolio-block">
+        <div class="portfolio-block-image">
+          <img src="/asset/images/event hero.jpg" alt="Event photography" />
+        </div>
+        <div class="portfolio-block-text">
+          <p class="eyebrow">Events</p>
+          <h2>Every Moment, <span>Never Missed</span></h2>
+          <p class="block-desc">
+            From birthdays to corporate gatherings, I move through your event
+            quietly, catching the candid laughs, the toasts, and the energy of
+            the room as it happens — so nothing gets lost once the night is
+            over.
+          </p>
+        </div>
+      </section>
+
+      <div class="portfolio-gallery">
+        <!-- Drop your own photos in /asset/images/ and swap the src below -->
+        <div class="gallery-item">
+          <img src="/asset/images/event- (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/event-2 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/event3 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/event4 (1).jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ============ MATERNITY ============ -->
+      <section class="portfolio-block portfolio-block-reverse">
+        <div class="portfolio-block-image">
+          <img
+            src="/asset/images/maternity hero.jpg"
+            alt="Maternity photography"
+          />
+        </div>
+        <div class="portfolio-block-text">
+          <p class="eyebrow">Maternity</p>
+          <h2>Gentle Portraits, <span>Glowing Moments</span></h2>
+          <p class="block-desc">
+            This chapter deserves to be remembered. Soft, flattering light and a
+            relaxed pace make for maternity sessions that feel calm and
+            comfortable, resulting in images you'll treasure long after baby
+            arrives.
+          </p>
+        </div>
+      </section>
+
+      <div class="portfolio-gallery">
+        <!-- Drop your own photos in /asset/images/ and swap the src below -->
+        <div class="gallery-item">
+          <img src="/asset/images/maternity-1 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/maternity-2 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/maternity-3 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/maternity-4 (1).jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ============ LANDSCAPE ============ -->
+      <section class="portfolio-block">
+        <div class="portfolio-block-image">
+          <img
+            src="/asset/images/landscape hero.jpg"
+            alt="Landscape photography"
+          />
+        </div>
+        <div class="portfolio-block-text">
+          <p class="eyebrow">Landscape</p>
+          <h2>Wide Open, <span>Breathtaking Views</span></h2>
+          <p class="block-desc">
+            Chasing golden hour across mountains, coastlines, and open fields —
+            every landscape shot is about patience, timing, and being in the
+            right place when the light does something unforgettable.
+          </p>
+        </div>
+      </section>
+
+      <div class="portfolio-gallery">
+        <!-- Drop your own photos in /asset/images/ and swap the src below -->
+        <div class="gallery-item">
+          <img src="/asset/images/landscape-1 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/landscape-2 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/landscape-3 (1).jpg" alt="" />
+        </div>
+        <div class="gallery-item">
+          <img src="/asset/images/landscape-4 (1).jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ============ CTA BANNER ============ -->
+      <section class="portfolio-cta">
+        <img src="/asset/images/event hero.jpg" class="cta-bg" alt="" />
+        <div class="cta-content">
+          <p class="eyebrow">Hire Us Now</p>
+          <h2>We Are Always Ready To <br />Take A Perfect Shot</h2>
+          <a href="https://wa.me/7056343057" class="cta-btn">
+            BOOK A SESSION <span>→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="home-footer">
+      <div class="footer-inner">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="foot-logo">
+              <i class="icon">
+                <img
+                  src="https://api.iconify.design/lucide:camera.svg?color=%23ffffff"
+                  alt="Camera"
+                />
+              </i>
+              <h1>Awesome <br /><span>Shot it</span></h1>
+            </div>
+
+            <p>
+              Capturing real moments and turning them into a timeless work of
+              art.
+            </p>
+
+            <div class="foot-socials">
+              <a
+                href="https://web.facebook.com/profile.php?id=61581393341740"
+                aria-label="Facebook"
+              >
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/facebook/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+              <a
+                href="https://www.instagram.com/awesome_digital94/"
+                aria-label="Instagram"
+              >
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/instagram/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+              <a href="#" aria-label="Youtube">
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/youtube/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/pinterest/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h2>Quick Links</h2>
+            <div class="nav-link">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="services.html">Services</a>
+              <a href="portfolio.html">Portfolio</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h2>Services</h2>
+            <div class="footer-list">
+              <p>Weddings photography</p>
+              <p>Portraits session</p>
+              <p>Events photography</p>
+              <p>Maternity photography</p>
+              <p>Landscape photography</p>
+              <p>Commercial photography</p>
+            </div>
+          </div>
+
+          <div class="footer-column contact-column">
+            <h2>Let's Connect</h2>
+
+            <div class="img-box-01">
+              <span class="contact-icon">
+                <img
+                  src="https://api.iconify.design/lucide:mail.svg?color=%23ffffff"
+                  alt="Email"
+                />
+              </span>
+              <span>awesomedigital46@gmail.com</span>
+            </div>
+
+            <div class="img-box-01">
+              <span class="contact-icon">
+                <img
+                  src="https://api.iconify.design/lucide:phone.svg?color=%23ffffff"
+                  alt="Phone"
+                />
+              </span>
+              <span>+234 705 634 3057</span>
+            </div>
+
+            <div class="img-box-01">
+              <span class="contact-icon">
+                <img
+                  src="https://api.iconify.design/lucide:map-pin.svg?color=%23ffffff"
+                  alt="Location"
+                />
+              </span>
+              <span>Ondo state, Nigeria</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Awesome Shot It. All rights reserved.</p>
+          <p>
+            Designed &amp; Developed by
+            <a href="https://my-portfolio-iota-dusky-33.vercel.app/"
+              >Awesome Digital</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
     <script src="/js/navigation.js"></script>
   </body>
 </html>

@@ -3,20 +3,453 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Services | Awesome Shot It</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Online SVG icons: Lucide -->
     <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/resposnsive.css" />
+    <link rel="stylesheet" href="/css/services.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <header class="site-header svc-header">
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        <img
+          src="https://api.iconify.design/lucide:camera.svg?color=%23ffffff"
+          alt="Awesome Shot It logo"
+        />
+        <h1>
+          Awesome <br />
+          <span>Shot it</span>
+        </h1>
+      </a>
+
+      <!-- MENU CHECKBOX -->
+      <input type="checkbox" id="menu-toggle" />
+
+      <!-- HAMBURGER -->
+      <label class="hamburger" for="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- NAVIGATION MENU -->
+      <div class="mobile-menu">
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="https://wa.me/7056343057" class="menu-cta"> BOOK A SESSION </a>
+      </div>
+
+      <!-- DARK OVERLAY -->
+      <label
+        class="menu-overlay"
+        for="menu-toggle"
+        aria-label="Close menu"
+      ></label>
     </header>
+
+    <main class="svc-main">
+      <!-- ============ HERO ============ -->
+      <section class="svc-hero svc-hero-dark">
+        <div class="svc-hero-text">
+          <p class="svc-eyebrow">Services</p>
+          <h1 class="svc-title">Photography<br />Services</h1>
+          <span class="svc-rule"></span>
+          <p class="svc-hero-desc">
+            Every moment has a story. I'm here to capture it beautifully,
+            naturally and timelessly.
+          </p>
+          <a href="https://wa.me/7056343057" class="svc-btn svc-btn-light">
+            BOOK A SESSION <span>→</span>
+          </a>
+        </div>
+        <div class="svc-hero-img">
+          <img
+            src="https://get.pxhere.com/photo/man-sea-horizon-silhouette-mountain-cloud-sun-sunrise-sunset-camera-photographer-sunlight-morning-dawn-dusk-evening-summit-atmospheric-phenomenon-atmosphere-of-earth-126607.jpg"
+            alt="Photographer capturing a shot at golden hour"
+          />
+        </div>
+      </section>
+
+      <!-- ============ WHAT I OFFER ============ -->
+      <section class="svc-offer">
+        <p class="svc-eyebrow svc-eyebrow-center">What I Offer</p>
+
+        <div class="svc-offer-grid">
+          <article class="svc-card">
+            <div class="svc-card-img">
+              <img
+                src="/asset/images/portrait hero.jpg"
+                alt="Portrait photography"
+              />
+            </div>
+            <img
+              class="svc-card-icon"
+              src="https://api.iconify.design/lucide:user.svg?color=%23c96a3e"
+              alt=""
+            />
+            <h3>Portrait Photography</h3>
+            <p>
+              Capturing your personality with creativity and attention to
+              detail.
+            </p>
+            <a href="#" class="svc-learn">LEARN MORE <span>→</span></a>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-img">
+              <img
+                src="/asset/images/wedding hero.jpg"
+                alt="Wedding photography"
+              />
+            </div>
+            <img
+              class="svc-card-icon"
+              src="https://api.iconify.design/lucide:gem.svg?color=%23c96a3e"
+              alt=""
+            />
+            <h3>Wedding Photography</h3>
+            <p>Timeless images that preserve every emotion of your big day.</p>
+            <a href="#" class="svc-learn">LEARN MORE <span>→</span></a>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-img">
+              <img src="/asset/images/event hero.jpg" alt="Event photography" />
+            </div>
+            <img
+              class="svc-card-icon"
+              src="https://api.iconify.design/lucide:calendar-days.svg?color=%23c96a3e"
+              alt=""
+            />
+            <h3>Event Photography</h3>
+            <p>
+              From birthdays to corporate events, I capture the energy and
+              unforgettable moments.
+            </p>
+            <a href="#" class="svc-learn">LEARN MORE <span>→</span></a>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-img">
+              <img
+                src="/asset/images/maternity hero.jpg"
+                alt="Maternity photography"
+              />
+            </div>
+            <img
+              class="svc-card-icon"
+              src="https://api.iconify.design/lucide:baby.svg?color=%23c96a3e"
+              alt=""
+            />
+            <h3>Maternity Photography</h3>
+            <p>
+              Gentle, glowing portraits that celebrate this beautiful chapter of
+              life.
+            </p>
+            <a href="#" class="svc-learn">LEARN MORE <span>→</span></a>
+          </article>
+
+          <article class="svc-card">
+            <div class="svc-card-img">
+              <img
+                src="/asset/images/landscape hero.jpg"
+                alt="Travel and landscape photography"
+              />
+            </div>
+            <img
+              class="svc-card-icon"
+              src="https://api.iconify.design/lucide:mountain.svg?color=%23c96a3e"
+              alt=""
+            />
+            <h3>Travel &amp; Landscape Photography</h3>
+            <p>
+              Breathtaking landscapes and adventures captured in stunning
+              detail.
+            </p>
+            <a href="#" class="svc-learn">LEARN MORE <span>→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ MY PROCESS ============ -->
+      <section class="svc-process">
+        <p class="svc-eyebrow svc-eyebrow-center svc-eyebrow-light">
+          My Process
+        </p>
+
+        <div class="svc-process-grid">
+          <div class="svc-step">
+            <div class="svc-step-top">
+              <span class="svc-step-num">01</span>
+              <img
+                src="https://api.iconify.design/lucide:message-circle.svg?color=%23ffffff"
+                alt=""
+              />
+            </div>
+            <h3>Let's Connect</h3>
+            <p>
+              We discuss your vision, needs and how I can bring your story to
+              life.
+            </p>
+          </div>
+
+          <div class="svc-step">
+            <div class="svc-step-top">
+              <span class="svc-step-num">02</span>
+              <img
+                src="https://api.iconify.design/lucide:calendar-check.svg?color=%23ffffff"
+                alt=""
+              />
+            </div>
+            <h3>Plan &amp; Prepare</h3>
+            <p>
+              We plan every detail to ensure a smooth and memorable experience.
+            </p>
+          </div>
+
+          <div class="svc-step">
+            <div class="svc-step-top">
+              <span class="svc-step-num">03</span>
+              <img
+                src="https://api.iconify.design/lucide:camera.svg?color=%23ffffff"
+                alt=""
+              />
+            </div>
+            <h3>The Session</h3>
+            <p>
+              I capture genuine moments with creativity and professionalism.
+            </p>
+          </div>
+
+          <div class="svc-step">
+            <div class="svc-step-top">
+              <span class="svc-step-num">04</span>
+              <img
+                src="https://api.iconify.design/lucide:image.svg?color=%23ffffff"
+                alt=""
+              />
+            </div>
+            <h3>Delivery</h3>
+            <p>
+              You receive beautifully edited images that you'll treasure
+              forever.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PACKAGES ============ -->
+      <section class="svc-packages">
+        <p class="svc-eyebrow svc-eyebrow-center">Packages</p>
+        <h2 class="svc-packages-title">Choose Your Collection</h2>
+        <span class="svc-rule svc-rule-center"></span>
+
+        <div class="svc-packages-grid">
+          <div class="svc-pkg">
+            <h3>Essential</h3>
+            <p class="svc-pkg-price">&#8358;120,000</p>
+            <ul>
+              <li>1 Hour Session</li>
+              <li>20 Edited Photos</li>
+              <li>Online Gallery</li>
+              <li>Printing Rights</li>
+            </ul>
+            <a href="https://wa.me/7056343057" class="svc-btn svc-btn-outline"
+              >CHOOSE PACKAGE</a
+            >
+          </div>
+
+          <div class="svc-pkg svc-pkg-featured">
+            <span class="svc-pkg-badge">Most Popular</span>
+            <h3>Premium</h3>
+            <p class="svc-pkg-price">&#8358;200,000</p>
+            <ul>
+              <li>3 Hour Session</li>
+              <li>60 Edited Photos</li>
+              <li>Online Gallery</li>
+              <li>Printing Rights</li>
+              <li>10 Prints</li>
+            </ul>
+            <a href="https://wa.me/7056343057" class="svc-btn svc-btn-dark"
+              >CHOOSE PACKAGE</a
+            >
+          </div>
+
+          <div class="svc-pkg">
+            <h3>Deluxe</h3>
+            <p class="svc-pkg-price">&#8358;350,000</p>
+            <ul>
+              <li>Full Day Coverage</li>
+              <li>100+ Edited Photos</li>
+              <li>Online Gallery</li>
+              <li>Printing Rights</li>
+              <li>20 Prints</li>
+              <li>Photo Album</li>
+            </ul>
+            <a href="https://wa.me/7056343057" class="svc-btn svc-btn-outline"
+              >CHOOSE PACKAGE</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FINAL CTA ============ -->
+      <section class="svc-cta">
+        <div class="svc-cta-overlay">
+          <p class="svc-eyebrow svc-eyebrow-light">
+            Ready to capture your moments?
+          </p>
+          <h2>Let's create something beautiful together.</h2>
+          <a href="https://wa.me/7056343057" class="svc-btn svc-btn-dark">
+            BOOK A SESSION <span>→</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="home-footer">
+      <div class="footer-inner">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="foot-logo">
+              <i class="icon">
+                <img
+                  src="https://api.iconify.design/lucide:camera.svg?color=%23ffffff"
+                  alt="Camera"
+                />
+              </i>
+              <h1>Awesome <br /><span>Shot it</span></h1>
+            </div>
+
+            <p>
+              Capturing real moments and turning them into a timeless work of
+              art.
+            </p>
+
+            <div class="foot-socials">
+              <a
+                href="https://web.facebook.com/profile.php?id=61581393341740"
+                aria-label="Facebook"
+              >
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/facebook/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+              <a
+                href="https://www.instagram.com/awesome_digital94/"
+                aria-label="Instagram"
+              >
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/instagram/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+              <a href="#" aria-label="Youtube">
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/youtube/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+              <a href="#" aria-label="Pinterest">
+                <span class="social-icon">
+                  <img
+                    src="https://cdn.simpleicons.org/pinterest/ffffff"
+                    alt=""
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h2>Quick Links</h2>
+            <div class="nav-link">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="services.html">Services</a>
+              <a href="portfolio.html">Portfolio</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h2>Services</h2>
+            <div class="footer-list">
+              <p>Weddings photography</p>
+              <p>Portraits session</p>
+              <p>Events photography</p>
+              <p>Maternity photography</p>
+              <p>Landscape photography</p>
+              <p>Commercial photography</p>
+            </div>
+          </div>
+
+          <div class="footer-column contact-column">
+            <h2>Let's Connect</h2>
+
+            <div class="img-box-01">
+              <span class="contact-icon">
+                <img
+                  src="https://api.iconify.design/lucide:mail.svg?color=%23ffffff"
+                  alt="Email"
+                />
+              </span>
+              <span>awesomedigital46@gmail.com</span>
+            </div>
+
+            <div class="img-box-01">
+              <span class="contact-icon">
+                <img
+                  src="https://api.iconify.design/lucide:phone.svg?color=%23ffffff"
+                  alt="Phone"
+                />
+              </span>
+              <span>+234 705 634 3057</span>
+            </div>
+
+            <div class="img-box-01">
+              <span class="contact-icon">
+                <img
+                  src="https://api.iconify.design/lucide:map-pin.svg?color=%23ffffff"
+                  alt="Location"
+                />
+              </span>
+              <span>Ondo state, Nigeria</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Awesome Shot It. All rights reserved.</p>
+          <p>
+            Designed &amp; Developed by
+            <a href="https://my-portfolio-iota-dusky-33.vercel.app/"
+              >Awesome Digital</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <script src="/js/main.js"></script>
     <script src="/js/navigation.js"></script>
