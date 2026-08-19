@@ -1420,9 +1420,7 @@ button:active {
     font-size: 15px;
   }
 }
-/* =====================================================
-   DESKTOP SLIDER RESET
-===================================================== */
+   /* DESKTOP SLIDER RESET */
 
 @media (min-width: 769px) {
 
