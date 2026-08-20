@@ -465,23 +465,16 @@
   padding-top: 20px;
   overflow: hidden;
 }
-.testimonial {
-  /* width: 100%; */
-}
+
 .about-btn {
   border-right: 1px solid rgba(128, 128, 128, 0.288);
   display: flex;
-  /* background-color: red; */
   width: 100%;
   padding: 0 10px;
-  /* width: 60%; */
-  /* width: 50%; */
 }
 .client-test {
   font-size: 20px;
   margin-top: -50px;
-  /* width: 50%; */
-  /* width: 100%; */
 }
 .client {
   display: flex;
@@ -506,17 +499,12 @@
 .star {
   margin-top: 20px;
 }
-/* .about-btn {
-  display: flex;
-  width: 100%;
-} */
 .testimonial{
   width: 50%;
 }
 .about-btn2 {
   padding: 0 20px;
   margin-top: 10px;
-  /* width: 40%; */
 }
 .about-btn3 h3 {
   font-size: 20px;
@@ -526,7 +514,6 @@
 #about {
   margin-top: 10px;
   font-size: 40px;
-  /* width: 50%; */
 }
 .about-btn2 a {
   display: inline-flex;
@@ -547,20 +534,14 @@
   font-size: 19px;
   width: 80%;
   line-height: 1.5;
-  /* background-color: blue; */
 }
 .img-about {
-  /* min-width: 150px; */
   width: 50%;
   height: auto;
-  /* background-color: gray; */
 }
 .img-about img {
   width: 100%;
   height: 100%;
-  /* display: block; */
-  object-fit: contain;
-  object-position: top;
 }
 
 .img-slider {
@@ -576,7 +557,6 @@
   display: flex;
   width: 100%;
   height: 150px;
-  /* justify-content: space-between; */
   gap: 50px;
   align-items: center;
   padding: 0 90px;
@@ -592,7 +572,6 @@
 .sect-1-btn p {
   font-size: 35px;
   width: 75%;
-  /* width: 60%; */
 }
 .img-sect-4 {
   background-color: var(--secondary-color);
@@ -620,10 +599,6 @@
   gap: 10px;
   color: var(--primary-color);
 }
-
-/* =========================
-   FOOTER
-========================= */
 
 /* =========================
    FOOTER
