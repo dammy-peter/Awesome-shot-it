@@ -27,18 +27,18 @@
   .home-footer {
     padding: 35px 20px 0;
   }
-  .foot-logo{
+  .foot-logo {
     display: flex;
     gap: 25px;
     margin-left: 10px;
   }
-  .foot-logo h1{
+  .foot-logo h1 {
     font-size: 15px;
   }
-  .foot-logo h1 span{
+  .foot-logo h1 span {
     font-size: 15px;
   }
-  .foot-logo i{
+  .foot-logo i {
     width: 20px;
     height: 20px;
   }
@@ -359,18 +359,20 @@
     border-right: none;
 
     border-bottom: 1px solid gray;
+    /* background-color: green; */
   }
 
-  .about-btn2 {
+  /* .about-btn2 {
     width: 100%;
 
     padding: 0 20px;
-  }
+  } */
 
   .testimonial {
     width: 40%;
+    /* background-color: yellow; */
   }
- 
+
   .client-test {
     font-size: 15px;
   }
@@ -383,15 +385,24 @@
     font-size: 10px;
   }
 
-  .img-about {
-    width: 60%;
+  /* .testimonial {
+    width: 40%;
+  } */
 
+  .img-about {
+    width: 200px;
+   
     height: auto;
+    /* overflow: hidden; */
+    /* flex-shrink: 0; */
+    /* background-color: red; */
+    
   }
-  .img-about img{
+  .img-about img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
   }
 
   /* =====================================================
@@ -459,10 +470,6 @@
   /* =====================================================
      IMAGE SLIDER
   ===================================================== */
-
-  /* =====================================================
-   IMAGE SLIDER - MOBILE ONLY
-===================================================== */
 
   .img-slider {
     width: 100%;
@@ -615,7 +622,7 @@
 
     border-right: none;
   }
-  .foot-logo h1{
+  .foot-logo h1 {
     font: 1px;
   }
 
@@ -662,15 +669,21 @@
     font-size: 15px;
   }
 }
-   /* DESKTOP SLIDER RESET */
+/* DESKTOP SLIDER RESET */
 
 @media (min-width: 769px) {
-
   .img-container {
     transform: none !important;
     transition: none;
   }
-
 }
-
-
+@media (max-width: 360px){
+  .img-about{
+    width: 170px;
+    height: auto;
+  }
+  .img-about img{
+    width: 100%;
+    object-fit: fill;
+  }
+}
