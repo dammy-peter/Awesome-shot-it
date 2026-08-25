@@ -153,17 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     testimonialTimer = setInterval(nextTestimonial, 5000);
   }
 
-  tDots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      showTestimonial(index);
-      startTestimonialTimer();
-    });
-  });
-
-  startTestimonialTimer();
-});
-
-  /* Touch / swipe for testimonials */
+   /* Touch / swipe for testimonials */
   let tTouchStartX = 0;
   let tTouchEndX = 0;
 
@@ -192,3 +182,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startTestimonialTimer();
   });
+
+  
+
+  tDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      showTestimonial(index);
+      startTestimonialTimer();
+    });
+  });
+
+  startTestimonialTimer();
+});
+
+ 
