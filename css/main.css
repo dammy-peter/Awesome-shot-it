@@ -1313,7 +1313,8 @@
   .hero-content-2 {
     display: flex;
     flex-direction: column;
-    height: 70vh;
+    height: auto;
+    gap: 10px;
     align-items: center;
     padding: 20px;
   }
@@ -1357,6 +1358,7 @@
     padding: 120px 0 100px;
     min-height: auto;
   }
+  
   .hero-cont-1,
   .hero-cont-2,
   .hero-cont-3,
@@ -1365,6 +1367,7 @@
     width: 100%;
     border: none;
     font-size: 12px;
+ 
   }
   .hero-sect02-btn {
     flex-direction: column;
@@ -1378,6 +1381,14 @@
   .hero-btn03 p,
   .hero-btn04 p {
     font-size: 9px;
+  }
+  .hero-btn01,
+  .hero-btn02,
+  .hero-btn03,
+  .hero-btn04{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   .hero-section-02 {
     padding: 0 20px;
