@@ -162,6 +162,14 @@
   cursor: grabbing;
 }
 
+/* Auto-scrolling service galleries: scroll-snap and smooth
+   scroll-behavior fight the per-frame scrollLeft updates used for
+   the infinite loop, so turn both off for these tracks. */
+.gallery-slider[data-slider] .gallery-track {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
 .gallery-item {
   flex: 0 0 calc(25% - 15px);
   scroll-snap-align: start;

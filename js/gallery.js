@@ -200,54 +200,44 @@
 })();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sliders = document.querySelectorAll(".gallery-slider");
+  const sliders = document.querySelectorAll(".gallery-slider[data-slider]");
 
   sliders.forEach((slider) => {
     const track = slider.querySelector(".gallery-track");
     if (!track) return;
 
-    let autoTimer;
-    let currentIndex = 0;
+    /* Duplicate the items once so the track has a second, identical
+       half to scroll into — that's what makes the loop point invisible. */
+    const originalItems = Array.from(track.children);
+    originalItems.forEach((item) => {
+      track.appendChild(item.cloneNode(true));
+    });
 
-    function stepDistance() {
-      const item = track.querySelector(".gallery-item");
-      if (!item) return 300;
-      const gap = parseInt(window.getComputedStyle(track).gap) || 20;
-      return item.offsetWidth + gap;
-    }
+    const pxPerSecond = 40;
+    let paused = false;
+    let lastTime = null;
 
-    function itemCount() {
-      return track.querySelectorAll(".gallery-item").length;
-    }
+    function tick(time) {
+      if (lastTime === null) lastTime = time;
+      const delta = time - lastTime;
+      lastTime = time;
 
-    function advanceSlide() {
-      const count = itemCount();
-      if (!count) return;
+      if (!paused) {
+        track.scrollLeft += (pxPerSecond * delta) / 1000;
 
-      currentIndex++;
-
-      const maxScroll = track.scrollWidth - track.clientWidth;
-
-      if (currentIndex >= count || track.scrollLeft >= maxScroll - 5) {
-        currentIndex = 0;
-        track.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        track.scrollBy({ left: stepDistance(), behavior: "smooth" });
+        const loopPoint = track.scrollWidth / 2;
+        if (track.scrollLeft >= loopPoint) {
+          track.scrollLeft -= loopPoint;
+        }
       }
-    }
 
-    function startAutoSlide() {
-      clearInterval(autoTimer);
-      autoTimer = setInterval(advanceSlide, 3500);
+      requestAnimationFrame(tick);
     }
+    requestAnimationFrame(tick);
 
-    function pauseAutoSlide() {
-      clearInterval(autoTimer);
-    }
-
-    function resumeAutoSlide() {
-      startAutoSlide();
-    }
+    /* Pause while a visitor is looking closer, dragging, or touching */
+    slider.addEventListener("mouseenter", () => (paused = true));
+    slider.addEventListener("mouseleave", () => (paused = false));
 
     /* Mouse drag-to-scroll on desktop */
     let isDown = false;
@@ -256,17 +246,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     track.addEventListener("mousedown", (e) => {
       isDown = true;
+      paused = true;
       track.classList.add("dragging");
       startX = e.pageX;
       startScroll = track.scrollLeft;
-      pauseAutoSlide();
     });
 
     ["mouseleave", "mouseup"].forEach((evt) => {
       track.addEventListener(evt, () => {
         isDown = false;
         track.classList.remove("dragging");
-        resumeAutoSlide();
+        paused = false;
       });
     });
 
@@ -277,32 +267,14 @@ document.addEventListener("DOMContentLoaded", () => {
       track.scrollLeft = startScroll - walk;
     });
 
-    /* Touch / swipe support */
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    track.addEventListener("touchstart", (e) => {
-      touchStartX = e.touches[0].clientX;
-      pauseAutoSlide();
-    });
-
-    track.addEventListener("touchmove", (e) => {
-      touchEndX = e.touches[0].clientX;
+    /* Touch support — just pause while the finger is on the track */
+    track.addEventListener("touchstart", () => {
+      paused = true;
     });
 
     track.addEventListener("touchend", () => {
-      const distance = touchStartX - touchEndX;
-
-      if (distance > 50) {
-        track.scrollBy({ left: stepDistance(), behavior: "smooth" });
-      } else if (distance < -50) {
-        track.scrollBy({ left: -stepDistance(), behavior: "smooth" });
-      }
-
-      resumeAutoSlide();
+      paused = false;
     });
-
-    startAutoSlide();
   });
 
   /* Continue where the visitor left off: if they arrived from the
