@@ -125,54 +125,135 @@
    GALLERY GRID (placeholder images)
 ======================================== */
 
-.portfolio-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* ========================================
+   ANCHOR OFFSET (so #weddings etc. don't
+   land under the fixed header)
+======================================== */
 
+.portfolio-block {
+  scroll-margin-top: 110px;
+}
+
+/* ========================================
+   GALLERY SLIDER (15 images, swipeable)
+======================================== */
+
+.gallery-slider {
+  position: relative;
   padding: 40px 90px 0;
 }
 
-.gallery-item {
-  aspect-ratio: 3 / 4;
-
+.gallery-track {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
 
-  background: rgba(0, 0, 0, 0.04);
-  border: 2px dashed rgba(0, 0, 0, 0.2);
+.gallery-track::-webkit-scrollbar {
+  display: none;
+}
 
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.45);
+.gallery-track.dragging {
+  scroll-behavior: auto;
+  cursor: grabbing;
+}
 
-  transition: border-color 0.3s ease, color 0.3s ease;
-
+.gallery-item {
+  flex: 0 0 calc(25% - 15px);
+  scroll-snap-align: start;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
+  border-radius: 4px;
+  cursor: grab;
 }
 
-.gallery-item:hover {
-  border-color: var(--accent-color);
-  color: var(--accent-color);
-}
-
-/* Gallery photos (weddings, portraits, and any section once you drop
-   your own images in) fill the box completely and crop to fit —
-   no stretching, no distortion. */
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  pointer-events: none; /* prevents ghost image drag */
 }
 
 .gallery-item:hover img {
   transform: scale(1.05);
 }
 
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.gallery-arrow:hover {
+  background: var(--accent-color);
+}
+
+.gallery-prev {
+  left: 50px;
+}
+
+.gallery-next {
+  right: 50px;
+}
+
+/* ========================================
+   MOBILE (gallery slider)
+======================================== */
+
+@media (max-width: 1024px) {
+  .gallery-item {
+    flex: 0 0 calc(33.333% - 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-slider {
+    padding: 24px 20px 0;
+  }
+
+  .gallery-item {
+    flex: 0 0 calc(50% - 10px);
+  }
+
+  .gallery-prev {
+    left: 8px;
+  }
+
+  .gallery-next {
+    right: 8px;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 0 0 78%;
+  }
+}
 /* ========================================
    CTA BANNER
 ======================================== */
