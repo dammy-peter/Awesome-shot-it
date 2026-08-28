@@ -225,7 +225,12 @@
 .section-1::after {
   position: absolute;
   content: "";
-  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
   z-index: 1;
   inset: 0;
   width: 100%;
@@ -287,12 +292,28 @@
 .book-btn {
   background: #f59a63;
   color: white;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .portfolio-btn {
   background: transparent;
   border: 1px solid white;
   color: white;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.portfolio-btn:hover {
+  background-color: white;
+  color: black;
 }
 
 .hero-buttons span {
@@ -382,13 +403,32 @@
 }
 .sect2-port {
   margin-top: 20px;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   gap: 10px;
   padding: 18px 22px;
   text-decoration: none;
   font-size: 12px;
+  letter-spacing: 0.5px;
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.sect2-port:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+.sect2-port span {
+  transition: transform 0.3s ease;
+}
+
+.sect2-port:hover span {
+  transform: translateX(4px);
 }
 .sect2-port a {
   text-decoration: none;
@@ -420,12 +460,18 @@
   transform: translatey(-5px);
 }
 
-/* Dark overlay */
+/* Dark overlay — concentrated at the bottom so captions stay
+   readable without dulling the whole photo */
 .img-sect01::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.35) 30%,
+    rgba(0, 0, 0, 0) 60%
+  );
 }
 
 /* Text on image */
@@ -555,9 +601,32 @@
 }
 
 .about-image {
+  position: relative;
   width: 42%;
   display: flex;
   justify-content: center;
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(245, 148, 92, 0.18),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.about-image img {
+  position: relative;
+  z-index: 1;
 }
 
 .about-image img {
@@ -747,7 +816,7 @@
 .cta-btn-secondary {
   background: transparent;
   color: var(--primary-color);
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .cta-btn-primary:hover,
@@ -763,22 +832,6 @@
 
 .cta-buttons a:hover span {
   transform: translateX(4px);
-}
-.cta-btn-primary {
-  background: var(--primary-color);
-  color: var(--secondary-color);
-}
-
-.cta-btn-secondary {
-  background: transparent;
-  color: var(--primary-color);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.cta-btn-primary:hover,
-.cta-btn-secondary:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
 }
 
 /* ========================================
@@ -1036,6 +1089,16 @@
   margin-top: 16px;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.65);
+}
+
+.img-box-01 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.img-box-01 a:hover {
+  color: var(--accent-color);
 }
 
 .contact-icon {
@@ -1358,7 +1421,7 @@
     padding: 120px 0 100px;
     min-height: auto;
   }
-  
+
   .hero-cont-1,
   .hero-cont-2,
   .hero-cont-3,
@@ -1367,7 +1430,6 @@
     width: 100%;
     border: none;
     font-size: 12px;
- 
   }
   .hero-sect02-btn {
     flex-direction: column;
@@ -1385,7 +1447,7 @@
   .hero-btn01,
   .hero-btn02,
   .hero-btn03,
-  .hero-btn04{
+  .hero-btn04 {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -1638,5 +1700,312 @@
   .img-container {
     transform: none !important;
     transition: none;
+  }
+}
+/* ========================================
+   PRICING
+======================================== */
+
+.pricing-section {
+  width: 100%;
+  padding: 100px 90px;
+  text-align: center;
+}
+
+.pricing-eyebrow {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.pricing-heading {
+  margin-top: 12px;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.pricing-sub {
+  margin-top: 12px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.pricing-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.pricing-card {
+  position: relative;
+  padding: 40px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card.featured {
+  border-color: var(--accent-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  right: 30px;
+  padding: 6px 14px;
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.pricing-name {
+  font-size: 22px;
+}
+
+.pricing-price {
+  margin-top: 12px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.pricing-price span {
+  margin-left: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.pricing-card.featured .pricing-price span {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-features {
+  margin-top: 24px;
+  list-style: none;
+}
+
+.pricing-features li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+}
+
+.pricing-card.featured .pricing-features li {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pricing-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 14px 22px;
+  width: 100%;
+  justify-content: center;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.pricing-btn:hover {
+  opacity: 0.85;
+}
+
+.pricing-btn span {
+  transition: transform 0.3s ease;
+}
+
+.pricing-btn:hover span {
+  transform: translateX(4px);
+}
+
+.pricing-note {
+  margin-top: 40px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.pricing-note a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ========================================
+   INSTAGRAM
+======================================== */
+
+.instagram-section {
+  width: 100%;
+  padding: 110px 90px;
+  text-align: center;
+}
+
+.instagram-eyebrow {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.instagram-heading {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 38px;
+  line-height: 1.2;
+}
+.instagram-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.instagram-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.instagram-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: var(--secondary-color);
+  transition: transform 0.4s ease;
+}
+
+.instagram-item:hover video {
+  transform: scale(1.06);
+}
+
+.instagram-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.instagram-overlay img {
+  width: 28px;
+  height: 28px;
+}
+
+.instagram-item:hover .instagram-overlay {
+  opacity: 1;
+}
+
+.instagram-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 48px;
+  padding: 14px 28px;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.instagram-follow-btn:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.instagram-follow-btn:hover img {
+  filter: invert(1);
+}
+
+.instagram-follow-btn img {
+  width: 16px;
+  height: 16px;
+  transition: filter 0.3s ease;
+}
+
+/* ========================================
+   RESPONSIVE — PRICING & INSTAGRAM
+======================================== */
+
+@media (max-width: 900px) {
+  .pricing-section,
+  .instagram-section {
+    padding: 80px 40px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pricing-card.featured {
+    grid-column: span 2;
+  }
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-heading,
+  .instagram-heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-section,
+  .instagram-section {
+    padding: 70px 20px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pricing-card.featured {
+    grid-column: span 1;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 40px;
+  }
+
+  .instagram-follow-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 36px;
   }
 }

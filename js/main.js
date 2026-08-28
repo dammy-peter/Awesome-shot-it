@@ -122,11 +122,9 @@ startAutoSlide();
 
 document.addEventListener("DOMContentLoaded", () => {
   const testimonials = document.querySelectorAll(
-    "#testimonialSlider .testimonial"
+    "#testimonialSlider .testimonial",
   );
-  const tDots = document.querySelectorAll(
-    "#testimonialSlider .t-dot"
-  );
+  const tDots = document.querySelectorAll("#testimonialSlider .t-dot");
 
   if (!testimonials.length) return;
 
@@ -153,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     testimonialTimer = setInterval(nextTestimonial, 5000);
   }
 
-   /* Touch / swipe for testimonials */
+  /* Touch / swipe for testimonials */
   let tTouchStartX = 0;
   let tTouchEndX = 0;
 
@@ -176,14 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (swipeDistance < -50) {
-      const prev = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      const prev =
+        (currentTestimonial - 1 + testimonials.length) % testimonials.length;
       showTestimonial(prev);
     }
 
     startTestimonialTimer();
   });
-
-  
 
   tDots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
@@ -194,5 +191,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startTestimonialTimer();
 });
-
- 

@@ -52,7 +52,7 @@
       { src: "/asset/images/event-1.webp", alt: "Corporate event" },
       { src: "/asset/images/event-2.webp", alt: "Event celebration" },
       { src: "/asset/images/event-4.webp", alt: "Event guests" },
-      { src: "/asset/imagesevent-5.webp", alt: "Event moment" },
+      { src: "/asset/images/event-5.webp", alt: "Event moment" },
       { src: "/asset/images/event-7.webp", alt: "Event venue" },
     ],
   };
