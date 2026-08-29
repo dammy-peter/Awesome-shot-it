@@ -216,25 +216,34 @@
 
 .section-1 {
   position: relative;
-  background: url(/asset/images/hero\ image\ \(1\).jpg);
-  background-size: cover;
-  background-position: 68% center;
+  background-color: #1a1a1a; /* fallback tone while image loads */
   width: 100%;
-  /* overflow: hidden; */
 }
 .section-1::after {
-  position: absolute;
   content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.6) 0%,
     rgba(0, 0, 0, 0.35) 45%,
     rgba(0, 0, 0, 0.15) 100%
   );
-  z-index: 1;
+}
+
+.hero-image {
+  position: absolute;
   inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: 68% center; /* matches your old background-position */
 }
 .hero-section {
   min-height: 100vh;
@@ -728,8 +737,31 @@
   align-items: center;
   text-align: center;
 
-  background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 60%, #14142b 100%);
   color: var(--primary-color);
+}
+.cta-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.cta-glow,
+.cta-badge,
+.cta-heading,
+.cta-sub,
+.cta-buttons {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(13,13,26,0.75) 0%, rgba(26,26,46,0.7) 60%, rgba(20,20,43,0.75) 100%);
 }
 
 .cta-glow {
@@ -1496,9 +1528,11 @@
     width: 55%;
   }
   .hero-sect2-btn2 a {
-    width: 175px;
-    padding: 8px 10px;
-    font-size: 12px;
+    width: auto;
+    max-width: 100%;
+    padding: 10px 16px;
+    font-size: 11px;
+    gap: 6px;
     white-space: nowrap;
     margin: 20px auto;
   }

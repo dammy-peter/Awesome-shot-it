@@ -9,6 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="/asset/images/hero%20image%20(1).jpg"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/gallery.css" />
   </head>
@@ -63,9 +69,14 @@
         </header>
 
         <div class="hero-section">
-          <!-- <div class="hero-image">
-            <img src="/asset/images/hero image.png" alt="" />
-          </div> -->
+          <div class="hero-image">
+            <img
+              src="/asset/images/hero image (1).jpg"
+              alt=""
+              fetchpriority="high"
+              loading="eager"
+            />
+          </div>
 
           <div class="hero-content">
             <div class="hero-cont">
@@ -447,6 +458,17 @@
 
       <section class="section-4">
         <div class="cta-card">
+          <video
+            class="cta-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="/asset/videos/wedding vid.mp4" type="video/mp4" />
+          </video>
+
           <div class="cta-glow"></div>
 
           <div class="cta-badge">
