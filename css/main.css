@@ -1219,17 +1219,50 @@
   }
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+/* =====================================================
+   TRUE TABLET RANGE (nav still desktop, content isn't)
+===================================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* --- Stats row: stop using overflowing % widths --- */
+  .hero-content-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 20px;
+    padding: 40px 50px;
+    justify-items: start;
+  }
 
-:root {
-  --primary-color: white;
-  --secondary-color: black;
-  --accent-color: #f5945c;
-  --background: rgba(163, 156, 156, 0.432);
+  .hero-cont-1,
+  .hero-cont-2,
+  .hero-cont-3,
+  .hero-cont-4 {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    padding: 0;
+  }
+
+  /* --- Featured works: let the cards actually scroll --- */
+  .hero-section-02 {
+    padding: 0 40px;
+  }
+
+  .img-container {
+    padding: 0 40px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .img-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .img-sect01 {
+    scroll-snap-align: start;
+  }
 }
 
 /* =====================================================
@@ -2007,5 +2040,13 @@
     width: 100%;
     justify-content: center;
     margin-top: 36px;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 26px; /* was 20px — gives the badge clearance */
+  }
+
+  .pricing-badge {
+    top: -10px; /* was -14px — pulls it back inside the gap */
   }
 }
