@@ -117,6 +117,22 @@ slider.addEventListener("touchend", () => {
 startAutoSlide();
 
 /* =========================
+   HERO BACKGROUND SLIDER
+========================= */
+
+const heroSlides = document.querySelectorAll(".hero-bg-slide");
+
+if (heroSlides.length) {
+  let currentHeroSlide = 0;
+
+  setInterval(() => {
+    heroSlides[currentHeroSlide].classList.remove("active");
+    currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+    heroSlides[currentHeroSlide].classList.add("active");
+  }, 5000);
+}
+
+/* =========================
    TESTIMONIAL AUTO-SLIDER
 ========================= */
 
